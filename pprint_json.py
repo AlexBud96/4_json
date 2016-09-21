@@ -3,10 +3,9 @@ import sys
 
 
 def load_data(filepath):
-    global data
     with open(filepath, 'r') as f:
         data = json.load(f)
-
+    return data
 
 def pretty_print_json(data):
     parsed = data
@@ -14,5 +13,5 @@ def pretty_print_json(data):
 
 
 if __name__ == '__main__':
-    load_data(sys.argv[1])
+    data = load_data(sys.argv[1])
     pretty_print_json(data)
